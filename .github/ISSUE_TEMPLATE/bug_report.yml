@@ -1,0 +1,67 @@
+name: Bug report
+description: Something doesn't work as it should.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting this. Please don't include passwords or application passwords anywhere in the report.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead. Include any error message exactly as shown.
+      placeholder: |
+        1. Selected 3 photos and chose File › Export, with PhotoPress (WordPress)
+        2. Ticked "Add images to a page's gallery" and chose the page "Spring Show"
+        3. Expected the photos to be added to the gallery, but…
+    validations:
+      required: true
+  - type: dropdown
+    id: how
+    attributes:
+      label: Exported or published?
+      options:
+        - File › Export
+        - Publish Service
+        - Plug-in Manager (setting up a website)
+  - type: input
+    id: plugin-version
+    attributes:
+      label: PhotoPress for Lightroom Classic version
+      description: Shown in File › Plug-in Manager, with PhotoPress selected, under Status.
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: lightroom-version
+    attributes:
+      label: Lightroom Classic version
+      description: Shown in Help › System Info (Lightroom Classic › About on a Mac).
+      placeholder: "15.0"
+    validations:
+      required: true
+  - type: input
+    id: os-version
+    attributes:
+      label: macOS or Windows version
+      placeholder: "macOS 15.7"
+  - type: input
+    id: wordpress-versions
+    attributes:
+      label: WordPress and PhotoPress versions
+      description: From the WordPress dashboard (Dashboard › Updates, and Plugins).
+      placeholder: "WordPress 7.1, PhotoPress 1.8"
+  - type: textarea
+    id: log
+    attributes:
+      label: Plugin log
+      description: |
+        The plugin's log is `PhotoPress.log` in Lightroom's log folder: on a Mac, `~/Library/Logs/Adobe/Lightroom/LrClassicLogs` (in Finder: Go › Go to Folder…, then paste that). Please paste the lines from around the time of the problem.
+        The log can include your website's address and photo file names. Remove anything you'd rather not share.
+      render: text
+  - type: textarea
+    id: anything-else
+    attributes:
+      label: Anything else?
+      description: Screenshots, other plugins on your site (for example security or caching plugins), or anything else that might help.
